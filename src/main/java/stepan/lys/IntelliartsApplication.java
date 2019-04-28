@@ -19,11 +19,11 @@ public class IntelliartsApplication {
     @Bean
     CommandLineRunner runner(PurchaseRepository repository) {
         return args -> {
-            repository.save(new Purchase(LocalDate.of(2019, 4, 25), 12, "USD","Photo Frame"));
-            repository.save(new Purchase(LocalDate.of(2019, 4, 25), 12, "USD","Photo Frame 2"));
-            repository.save(new Purchase(LocalDate.of(2018, 4, 25), 24, "EUR","Hat"));
-            repository.save(new Purchase(LocalDate.of(2018, 4, 25), 24, "EUR","Hat 2"));
-            repository.save(new Purchase(LocalDate.of(2018, 4, 25), 24, "EUR","Hat 3"));
+            repository.save(new Purchase(LocalDate.of(2019, 4, 25), 12d, "USD","Photo Frame"));
+            repository.save(new Purchase(LocalDate.of(2019, 4, 25), 2d, "USD","T-shirt"));
+            repository.save(new Purchase(LocalDate.of(2019, 4, 26), 2.5d, "PLN","Sweets"));
+            repository.save(new Purchase(LocalDate.of(2019, 4, 27), 4.75d, "EUR","Beer"));
+
         };
     }
 

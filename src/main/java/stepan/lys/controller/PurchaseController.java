@@ -9,6 +9,7 @@ import stepan.lys.service.PurchaseService;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/purchase")
@@ -22,7 +23,7 @@ public class PurchaseController {
     }
 
     @PostMapping
-    public ResponseEntity<List<Purchase>> create(@RequestBody Purchase purchase) {
+    public ResponseEntity<Map<LocalDate, List<String>>> create(@RequestBody Purchase purchase) {
         return new ResponseEntity<>(
                 purchaseService.add(purchase),
                 HttpStatus.CREATED
@@ -30,7 +31,7 @@ public class PurchaseController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Purchase>> all() {
+    public ResponseEntity<Map<LocalDate, List<String>>> all() {
         return new ResponseEntity<>(
                 purchaseService.getAll(),
                 HttpStatus.OK
@@ -38,7 +39,7 @@ public class PurchaseController {
     }
 
     @DeleteMapping("/{date}")
-    public ResponseEntity<List<Purchase>> clear(@PathVariable String date) {
+    public ResponseEntity<Map<LocalDate, List<String>>> clear(@PathVariable String date) {
         return new ResponseEntity<>(
                 purchaseService.deleteByDate(LocalDate.parse(date)),
                 HttpStatus.OK

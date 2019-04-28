@@ -23,11 +23,11 @@ public class Purchase {
     @Column(updatable = false, nullable = false)
     private LocalDate date;
 
-    private Integer price;
+    private Double price;
     private String currency;
     private String name;
 
-    public Purchase(LocalDate date, Integer price, String currency, String name) {
+    public Purchase(LocalDate date, Double price, String currency, String name) {
         this.date = date;
         this.price = price;
         this.currency = currency;
