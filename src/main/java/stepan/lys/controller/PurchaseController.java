@@ -38,6 +38,15 @@ public class PurchaseController {
         );
     }
 
+    @GetMapping("/report")
+    public ResponseEntity<String> report(@RequestParam(defaultValue = "2019") String year,
+                                         @RequestParam(defaultValue = "UAH") String currency) {
+        return new ResponseEntity<>(
+                purchaseService.getReport(year, currency.toUpperCase()),
+                HttpStatus.OK
+        );
+    }
+
     @DeleteMapping("/{date}")
     public ResponseEntity<Map<LocalDate, List<String>>> clear(@PathVariable String date) {
         return new ResponseEntity<>(

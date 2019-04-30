@@ -8,14 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import stepan.lys.model.Purchase;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Repository
 public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
-
-
-    List<Purchase> findAllByDateEquals(LocalDate date);
-
     @Transactional
     @Modifying
     @Query(value = "delete from Purchase p where p.date = ?1")
