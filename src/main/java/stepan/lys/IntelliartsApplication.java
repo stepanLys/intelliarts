@@ -23,8 +23,8 @@ public class IntelliartsApplication {
             repository.save(new Purchase(LocalDate.of(2019, 4, 25), 2d, "USD","T-shirt"));
             repository.save(new Purchase(LocalDate.of(2019, 4, 26), 2.5d, "PLN","Sweets"));
             repository.save(new Purchase(LocalDate.of(2019, 4, 27), 4.75d, "EUR","Beer"));
-//            repository.save(new Purchase(LocalDate.of(2018, 2, 7), 5d, "UAH","A"));
-//            repository.save(new Purchase(LocalDate.of(2018, 4, 27), 1.98d, "USD","B"));
+            repository.save(new Purchase(LocalDate.of(2018, 2, 7), 5d, "UAH","A"));
+            repository.save(new Purchase(LocalDate.of(2018, 4, 27), 1.98d, "USD","B"));
 
         };
     }
