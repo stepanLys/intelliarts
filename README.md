@@ -19,14 +19,18 @@ It's test task for Intelliarts Summer Camp 2019
 
 GET requests:
 * localhost:8090/api/purchase - returns all purchase
+  
   ![screenshot of sample](get1.png)
 * localhost:8090/api/purchase - returns the sum of purchases of specified year in the specified currency
+  
   ![screenshot of sample](get2.png)
   
 POST request:
 * localhost:8090/api/purchase - returns all purchase after adding
+  
   ![screenshot of sample](post.png)
   
 DELETE request:
 * localhost:8090/api/purchase/2019-04-27 - returns all purchases after deletion for a specific date
+  
   ![screenshot of sample](delete.png)
