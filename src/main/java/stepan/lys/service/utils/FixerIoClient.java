@@ -1,4 +1,4 @@
-package stepan.lys.service;
+package stepan.lys.service.utils;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -7,6 +7,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 import static stepan.lys.constants.FixerIoConst.FIXERIO_URL;
 
@@ -15,6 +16,7 @@ public class FixerIoClient {
 
     private RestTemplate restTemplate;
     private Map rates;
+    private Set currency;
 
     public FixerIoClient() {
         restTemplate = new RestTemplate();
@@ -30,5 +32,11 @@ public class FixerIoClient {
         }
 
         return rates;
+    }
+
+    public Set getCurrency() {
+        currency = getRates().keySet();
+
+        return currency;
     }
 }

@@ -7,12 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import stepan.lys.model.Purchase;
 import stepan.lys.service.PurchaseService;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4200"})
 @RequestMapping("/api/purchase")
 public class PurchaseController {
 
@@ -24,7 +25,7 @@ public class PurchaseController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<LocalDate, List<String>>> create(@RequestBody Purchase purchase) {
+    public ResponseEntity<Object> create(@Valid @RequestBody Purchase purchase) {
         return new ResponseEntity<>(
                 purchaseService.add(purchase),
                 HttpStatus.CREATED
